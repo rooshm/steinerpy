@@ -1,8 +1,7 @@
 """ This module allows the user to select an algorithm to run"""
 
 from steinerpy.library.logger import MyLogger
-from .algorithms import Unmerged, SstarHS, SstarHS0, Kruskal, SstarBS, SstarMM, SstarMM0
-from steinerpy.library.graphs.graph import GraphFactory
+from .algorithms import Unmerged, SstarHS, SstarHS0, Kruskal, SstarBS, SstarMM, SstarMM0, SLPAstarHS, SLPAstarHS0, SLPAstarBS, SLPAstarMM, SLPAstarMM0, LPAUnmerged
 
 class Context:
     """ The Context class is responsible for passing a user's request to run a specific algorithm
@@ -70,6 +69,18 @@ class Context:
             self.instances[self.strategy] = SstarMM(self._graph, self._terminals)
         elif self.strategy == "S*-MM0":
             self.instances[self.strategy] = SstarMM0(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-unmerged":
+            self.instances[self.strategy] = LPAUnmerged(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-HS":
+            self.instances[self.strategy] = SLPAstarHS(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-HS0":
+            self.instances[self.strategy] = SLPAstarHS0(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-BS":
+            self.instances[self.strategy] = SLPAstarBS(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-MM":
+            self.instances[self.strategy] = SLPAstarMM(self._graph, self._terminals)
+        elif self.strategy == "SLPA*-MM0":
+            self.instances[self.strategy] = SLPAstarMM0(self._graph, self._terminals)
         else:
             raise ValueError("Strategy {} is not found".format(self.strategy))
         # Log run
