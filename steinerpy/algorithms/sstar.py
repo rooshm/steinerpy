@@ -8,6 +8,9 @@ class SstarHS(Framework):
 
     def __init__(self, G, T):
         Framework.__init__(self, G, T)
+    
+    def rhs_costs_func(self):
+        pass 
 
     def f_costs_func(self, component, cost_so_far, next):
         """fcost(n) = gcost(n) + hcost(n, goal)
@@ -94,6 +97,9 @@ class SstarHS0(Framework):
     def __init__(self, G, T):
         super().__init__(G, T)
 
+    def rhs_costs_func(self):
+        pass 
+
     def f_costs_func(self, component, cost_so_far, next):
         """fcost(n) = gcost(n) + hcost(n, goal)        
         
@@ -148,6 +154,9 @@ class SstarHS0(Framework):
 class SstarBS(Framework):
     def __init__(self, G, T):
         super().__init__(G, T)
+    
+    def rhs_costs_func(self):
+        pass 
 
     def f_costs_func(self, component, cost_so_far, next):
         """fcost(n) = gcost(n) + hcost(n, goal)        
@@ -200,6 +209,9 @@ class SstarMM(Framework):
     """Meet-in-the-Middle implementation with heuristics """
     def __init__(self, G, T):
         super().__init__(G, T)
+    
+    def rhs_costs_func(self):
+        pass 
 
     def f_costs_func(self, component, cost_so_far, next):
         """Normally, fcost(n) = gcost(n) + hcost(n, goal), but this function 
@@ -289,6 +301,9 @@ class SstarMM0(Framework):
     """Meet-in-the-Middle implementation without heuristics (Brute-force search)"""
     def __init__(self, G, T):
         super().__init__(G, T)
+    
+    def rhs_costs_func(self):
+        pass 
 
     def f_costs_func(self, component, cost_so_far, next):
         """Normally, fcost(n) = gcost(n) + hcost(n, goal), but this function 

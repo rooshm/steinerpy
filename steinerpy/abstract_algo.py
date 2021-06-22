@@ -9,7 +9,7 @@ from typing import List
 class AbstractAlgorithm(newABC):
     """An abstract barebones superclass for each algorithm implementation.
 
-    All algorithm implementations should inhereit :py:class:: AbstractAlgorithm.
+    All algorithm implementations should inherit :py:class:: AbstractAlgorithm.
     Do not instantiate this directly!
 
     Attributes:

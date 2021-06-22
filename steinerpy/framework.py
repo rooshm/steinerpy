@@ -36,7 +36,7 @@ class Framework(AbstractAlgorithm):
         FLAG_STATUS_completeTree (bool): Initially `False`, used to end any algorithm
         comps (dict): A table of search components, which can be merged
         F (dict): A working forest or cache to store closed nodes. Used to check for intersections.
-        nodeQueue (PriorityQueue): Used to pop nominated nodes
+        nodeQueue (PriorityQueueHeap): Used to pop nominated nodes
         pathQueue (PriorityQueueHeap): Used to pop candidate 'shortest paths'
         run_debug (int): A debugging counter, incremented per iteration
         selNode (tuple): The popped node from the nomination queue above.
@@ -989,6 +989,13 @@ class Framework(AbstractAlgorithm):
         """An abstract method used to calculate the fcost of a node in the open set. Must be overriden! 
         
         Typically, this is the sum of g and h, i.e. f=g+h, but may depend on the user's case
+        
+        """
+        pass
+
+    @abstractmethod
+    def rhs_costs_func(self):
+        """An abstract method used to calculate the rhs of a node.
         
         """
         pass 

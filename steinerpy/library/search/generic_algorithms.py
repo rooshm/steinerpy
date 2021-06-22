@@ -69,7 +69,7 @@ class Search:
         
         # The cost so far (includes both frontier and closed list)
         # TODO: May have to modify g merging in the future for primal-dual
-        self.g = {}
+        self.g, self.rhs = {}, {}
         self.g[start] = 0
 
         # Linked List
@@ -148,7 +148,7 @@ class GenericSearch(Search):
     Todo:
         * Consider putting animateClosed in the `update` function, because closing does not occur until `update`
     """
-    def __init__(self, graph,  fCostsFunc, start, frontierType, goal=None, visualize=False, id=None):
+    def __init__(self, graph, fCostsFunc, start, frontierType, goal=None, visualize=False, id=None):
         Search.__init__(self, graph, start, goal, frontierType, fCostsFunc, id)
         
         # Visualize algorithm flag
